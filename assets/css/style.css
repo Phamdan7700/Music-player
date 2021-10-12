@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#app {
+    width: 500px;
+    margin:5px auto;
+    text-align: center;
+    border: 1px solid #ddd;
+    
+}
+
+#header {
+    padding: 10px 0;
+}
+
+#header .now-playing {
+    color: red;
+    font-weight: bold;
+}
+
+#header .header-title {
+    font-weight: bold;
+}
+
+#thumbnail {
+    padding: 10px 0;
+}
+
+#thumbnail img{
+    border-radius: 50%;
+    width: 200px;
+   
+}
+
+.rotate {
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#controls {
+    list-style: none;
+    padding: 10px 0;
+}
+
+#controls li {
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 1.5rem;
+}
+
+#controls input {
+    cursor: pointer;
+}
+
+#controls #progress {
+    display: block;
+    margin: auto;
+    width: 350px;
+}
+
+#play-list   {
+    padding: 10px 0;
+    margin-top: 10px;
+    background-color: #ddd;
+    cursor: pointer;
+}
+
+#play-list   .song{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px #333;
+
+
+}
+
+#play-list   .song img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.song-info {
+    flex: 1;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.song.active {
+    border: 1px solid red;
+}

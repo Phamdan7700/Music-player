@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/font/css/all.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Title -->
+        <div id="header">
+            <div class="now-playing">Now Playing ...</div>
+            <h3 class="header-title">Ten bai hat</h3>
+        </div>
+
+        <!-- Thumbnail -->
+        <div id="thumbnail">
+            <img src="./assets/img/lebaobinh.jpg" alt="thumbnail">
+        </div>
+
+        <!-- Control -->
+        <ul id="controls">
+            <li id="btn-repeat"><i class="fas fa-redo"></i></li>
+            <li id="btn-backward"><i class="fas fa-step-backward"></i></li>
+            <li id="btn-play"><i class="far fa-play-circle"></i></li>
+            <li id="btn-forward"><i class="fas fa-step-forward"></i></li>
+            <li id="btn-random"><i class="fas fa-random"></i></li>
+            <input type="range" name="progress" id="progress">
+
+        </ul>
+
+        <!-- Playlist -->
+        <ul id="play-list">
+            <li class="song active">
+                <img src="./assets/img/lebaobinh.jpg" alt="">
+                <div class="song-info">
+                    <h3>Ten bai hat</h3>
+                    <span>Tac gia</span>
+                </div>
+                <span><i class="fas fa-ellipsis-h"></i></span>
+            </li>
+            <li class="song">
+                <img src="./assets/img/lebaobinh.jpg" alt="">
+                <div class="song-info">
+                    <h3>Ten bai hat</h3>
+                    <span>Tac gia</span>
+                </div>
+                <span><i class="fas fa-ellipsis-h"></i></span>
+            </li>
+            <li class="song">
+                <img src="./assets/img/lebaobinh.jpg" alt="">
+                <div class="song-info">
+                    <h3>Ten bai hat</h3>
+                    <span>Tac gia</span>
+                </div>
+                <span><i class="fas fa-ellipsis-h"></i></span>
+            </li>
+        </ul>
+    </div>
+
+    <audio id="song" src="./assets/music/CauHenCauThe-DinhDung-6994741.mp3"></audio>
+
+
+    <script src="assets/js/ui.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
