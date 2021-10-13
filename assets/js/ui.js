@@ -2,6 +2,7 @@
 
 class UI {
     constructor() {
+        this.title = document.getElementById('title')
         this.playBtn = document.getElementById('btn-play');
         this.repeatBtn = document.getElementById('btn-repeat');
         this.backwardBtn = document.getElementById('btn-backward');
@@ -18,7 +19,7 @@ class UI {
     renderPlayList(playListData) {
         let listDataArr = playListData.map((song) => {
             return `
-            <li class="song" data-sound="${song.audio}">
+            <li class="song">
                 <img src="./assets/img/${song.thumbnail}" alt="">
                 <div class="song-info">
                     <h3>${song.title}</h3>
@@ -34,11 +35,17 @@ class UI {
 
 
 
-    activeCurrentSong(currentSong) {
-        let activeSong = document.querySelector('.song.active')
-        activeSong?.classList.remove('active');
-        currentSong.classList.add('active')
+    activeCurrentSong(index) {
+        let activedSong = document.querySelector('.song.active')
+        activedSong?.classList.remove('active');
+        this.playList[index].classList.add('active')
+        activedSong = document.querySelector('.song.active')
+        let headerWidth = document.getElementById('header').offsetHeight;
+        let offsetTop = activedSong.offsetTop
+        window.scrollTo(0, offsetTop - headerWidth - 100)
+        document.querySelector('.song.active').scrollTo()
         this.thumbnail.classList.add('rotate');
+        this.title.innerText = playListData[index].title
     }
 
 

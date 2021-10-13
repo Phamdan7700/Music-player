@@ -82,13 +82,12 @@ class MusicPlayer {
         this.duration = 0;
 
         this.ui = new UI();
-        this.ui.renderPlayList(this.playListData)
         this.start();
     }
 
     start() {
-
         let self = this;
+        this.ui.renderPlayList(this.playListData)
         let playList = Array.from(document.getElementsByClassName('song'));
         playList.forEach((song, index) => {
             song.addEventListener('click', function () {
@@ -111,6 +110,7 @@ class MusicPlayer {
         this.ui.randomBtn.onclick = function () {
             self.random();
         }
+
 
 
 
@@ -165,17 +165,19 @@ class MusicPlayer {
         this.currentSong.audio = new Audio('assets/music/' + playListData[currentSongIndex]['audio']);
         this.currentSong.index = currentSongIndex;
         this.play();
-        this.ui.activeCurrentSong(this.ui.playList[currentSongIndex]);
+        this.ui.activeCurrentSong(currentSongIndex);
 
         this.currentSong.audio.ontimeupdate = () => {
             this.duration = this.currentSong.audio.duration
             this.ui.durationControl.max = this.duration
             this.ui.durationControl.value = this.currentSong.audio.currentTime;
-            
+
         }
 
         this.ui.durationControl.oninput = (e) => {
             this.currentSong.audio.currentTime = e.target.value
+            alert("Start: " + this.currentSong.audio.seekable.start(0) + " End: " + this.currentSong.audio.seekable.end(0));
+
         }
 
         this.currentSong.audio.onended = () => {
@@ -184,9 +186,10 @@ class MusicPlayer {
 
     }
 
-    editTime() {
-
+    get(a) {
+        console.log(a);
     }
+  
 
 
 

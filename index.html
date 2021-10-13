@@ -15,56 +15,33 @@
     <div id="app">
         <!-- Title -->
         <div id="header">
-            <div class="now-playing">Now Playing ...</div>
-            <h3 class="header-title">Ten bai hat</h3>
+            <div id="now-playing">Đang Phát ...</div>
+            <h3 id="title"></h3>
+
+            <!-- Thumbnail -->
+            <div id="thumbnail">
+                <img src="./assets/img/lebaobinh.jpg" alt="thumbnail">
+            </div>
+
+            <!-- Control -->
+            <ul id="controls">
+                <li id="btn-repeat"><i class="fas fa-redo"></i></li>
+                <li id="btn-backward"><i class="fas fa-step-backward"></i></li>
+                <li id="btn-play"><i class="far fa-play-circle"></i></li>
+                <li id="btn-forward"><i class="fas fa-step-forward"></i></li>
+                <li id="btn-random"><i class="fas fa-random"></i></li>
+                <input type="range" name="duration" id="duration" min="0" value="0">
+
+            </ul>
         </div>
 
-        <!-- Thumbnail -->
-        <div id="thumbnail">
-            <img src="./assets/img/lebaobinh.jpg" alt="thumbnail">
-        </div>
 
-        <!-- Control -->
-        <ul id="controls">
-            <li id="btn-repeat"><i class="fas fa-redo"></i></li>
-            <li id="btn-backward"><i class="fas fa-step-backward"></i></li>
-            <li id="btn-play"><i class="far fa-play-circle"></i></li>
-            <li id="btn-forward"><i class="fas fa-step-forward"></i></li>
-            <li id="btn-random"><i class="fas fa-random"></i></li>
-            <input type="range" name="duration" id="duration" min="0" value="0">
-
-        </ul>
 
         <!-- Playlist -->
         <ul id="playlist-wrapper">
-            <li class="song active">
-                <img src="./assets/img/lebaobinh.jpg" alt="">
-                <div class="song-info">
-                    <h3>Ten bai hat</h3>
-                    <span>Tac gia</span>
-                </div>
-                <span><i class="fas fa-ellipsis-h"></i></span>
-            </li>
-            <li class="song">
-                <img src="./assets/img/lebaobinh.jpg" alt="">
-                <div class="song-info">
-                    <h3>Ten bai hat</h3>
-                    <span>Tac gia</span>
-                </div>
-                <span><i class="fas fa-ellipsis-h"></i></span>
-            </li>
-            <li class="song">
-                <img src="./assets/img/lebaobinh.jpg" alt="">
-                <div class="song-info">
-                    <h3>Ten bai hat</h3>
-                    <span>Tac gia</span>
-                </div>
-                <span><i class="fas fa-ellipsis-h"></i></span>
-            </li>
         </ul>
     </div>
 
-    <audio id="song" src="./assets/music/CauHenCauThe-DinhDung-6994741.mp3"></audio>
 
 
     <script src="assets/js/ui.js"></script>
