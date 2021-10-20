@@ -8,73 +8,75 @@ const playListData = [
     },
     {
         id: 2,
-        title: "Em Là Con Thuyền Cô Đơn",
-        artist: "Thái Học",
-        thumbnail: 'Dinhtunghuy.jpg',
-        audio: 'EmLaConThuyenCoDonACVRemix-ThaiHoc-7098730.mp3'
+        title: "Câu Hẹn Câu Thề",
+        artist: "Đình Dũng, ACV",
+        thumbnail: '1617029681297_500.jpg',
+        audio: 'CauHenCauThe-DinhDung-6994741.mp3'
     },
     {
         id: 3,
+        title: "Em Là Con Thuyền Cô Đơn",
+        artist: "Thái Học",
+        thumbnail: '1633164445997_640.jpg',
+        audio: 'EmLaConThuyenCoDonACVRemix-ThaiHoc-7098730.mp3'
+    },
+    {
+        id: 4,
         title: "Sai Cách Yêu",
         artist: "Lê Bảo Bình",
         thumbnail: 'lebaobinh.jpg',
         audio: 'SaiCachYeuRemixVersion2-LeBaoBinh-7064489.mp3'
     },
     {
-        id: 4,
+        id: 5,
         title: "Cô Đơn Dành Cho Ai",
         artist: "Lee Ken, Nal",
         thumbnail: 'codondanhchoai.jpg',
         audio: 'CoDonDanhChoAi-LeeKenNal-7068986.mp3'
     },
     {
-        id: 5,
-        title: "Người Lạ Thoáng Qua",
-        artist: "Đinh Tùng Huy, ACV",
-        thumbnail: 'Dinhtunghuy.jpg',
-        audio: 'CauHenCauThe-DinhDung-6994741.mp3'
-    },
-    {
         id: 6,
-        title: "Người Lạ Thoáng Qua",
-        artist: "Đinh Tùng Huy, ACV",
-        thumbnail: 'Dinhtunghuy.jpg',
-        audio: 'CauHenCauThe-DinhDung-6994741.mp3'
+        title: "Ngày Tỏ Tình Bạn",
+        artist: "Suni Hạ Linh, Osad",
+        thumbnail: '1634284020524_500.jpg',
+        audio: 'NgayToTinhBan-SuniHaLinhOsad-7013721.mp3'
     },
     {
         id: 7,
-        title: "Người Lạ Thoáng Qua",
-        artist: "Đinh Tùng Huy, ACV",
-        thumbnail: 'Dinhtunghuy.jpg',
-        audio: 'CauHenCauThe-DinhDung-6994741.mp3'
+        title: "Cưới Thôi",
+        artist: "Masew, Masiu",
+        thumbnail: '1631181753902_500.jpg',
+        audio: 'CuoiThoi-MasewMasiuBRayTAPVietNam-7085648.mp3'
     },
     {
         id: 8,
-        title: "Người Lạ Thoáng Qua",
-        artist: "Đinh Tùng Huy, ACV",
-        thumbnail: 'Dinhtunghuy.jpg',
-        audio: 'CauHenCauThe-DinhDung-6994741.mp3'
+        title: "Buồn Làm Chi Em Ơi",
+        artist: "Hoài Lâm",
+        thumbnail: '1591950830200_500.jpg',
+        audio: 'BuonLamChiEmOi1-HoaiLam-6297318.mp3'
     },
     {
         id: 9,
-        title: "Người Lạ Thoáng Qua",
-        artist: "Đinh Tùng Huy, ACV",
-        thumbnail: 'Dinhtunghuy.jpg',
-        audio: 'CauHenCauThe-DinhDung-6994741.mp3'
+        title: "Anh Không Tha Thứ",
+        artist: "Đình Dũng, ACV",
+        thumbnail: '1601278894694_500.jpg',
+        audio: 'AnhKhongThaThu-DinhDung-6684271.mp3'
     },
     {
         id: 10,
-        title: "Người Lạ Thoáng Qua",
-        artist: "Đinh Tùng Huy, ACV",
-        thumbnail: 'Dinhtunghuy.jpg',
-        audio: 'CauHenCauThe-DinhDung-6994741.mp3'
+        title: "Gặp Gỡ, Yêu Đương Và Được Bên Em",
+        artist: "Phan Mạnh Quỳnh",
+        thumbnail: '1628404241673_500.jpg',
+        audio: 'GapGoYeuDuongVaDuocBenEm-PhanManhQuynh-7061898.mp3'
     },
 ]
 
 class MusicPlayer {
     constructor() {
         this.playListData = playListData;
-        this.isPlaying = false
+        this.isPlaying = false;
+        this.isRandom = false;
+        this.isRepeat = false;
         this.currentSong = {
             audio: null,
             index: null
@@ -95,26 +97,35 @@ class MusicPlayer {
             })
         });
 
-        this.ui.playBtn.onclick = function () {
-            self.isPlaying ? self.pause() : self.play();
+        this.ui.playBtn.onclick = () => {
+            this.isPlaying ? this.pause() : this.play();
         }
 
-        this.ui.forwardBtn.onclick = function () {
-            self.next(1)
+        this.ui.forwardBtn.onclick = () => {
+            this.next(1)
         }
 
-        this.ui.backwardBtn.onclick = function () {
-            self.next(-1)
+        this.ui.backwardBtn.onclick = () => {
+            this.next(-1)
         }
 
-        this.ui.randomBtn.onclick = function () {
-            self.random();
+        this.ui.randomBtn.onclick = () => {
+            this.isRandom = !this.isRandom;
+            let color = '#fff';
+            if (this.isRandom) {
+                color = '#333';
+            }
+            this.ui.randomBtn.style.color = color;
         }
 
-
-
-
-
+        this.ui.repeatBtn.onclick = () => {
+            this.isRepeat = !this.isRepeat;
+            let color = '#fff';
+            if (this.isRepeat) {
+                color = '#333';
+            }
+            this.ui.repeatBtn.style.color = color;
+        }
 
     }
 
@@ -139,6 +150,11 @@ class MusicPlayer {
     }
 
     next(n) {
+        if (this.isRandom) {
+            this.random();
+            return;
+        }
+
         this.currentSong.index += n
         let lastIndexAudio = this.playListData.length - 1
         if (this.currentSong.index < 0) {
@@ -161,6 +177,12 @@ class MusicPlayer {
 
     loadCurrentSong(currentSongIndex) {
         this.ui.thumbnail.src = 'assets/img/' + playListData[currentSongIndex].thumbnail;
+        this.ui.bg.style.background = `radial-gradient(var(--colorStart), var(--colorStop) ), url(assets/img/${playListData[currentSongIndex].thumbnail}) no-repeat center / cover`;
+        this.ui.bg.classList.add('fadeIn')
+        this.ui.bg.onanimationend = () => {
+            this.ui.bg.classList.remove('fadeIn')
+
+        }
         this.pause();
         this.currentSong.audio = new Audio('assets/music/' + playListData[currentSongIndex]['audio']);
         this.currentSong.index = currentSongIndex;
@@ -176,24 +198,25 @@ class MusicPlayer {
 
         this.ui.durationControl.oninput = (e) => {
             this.currentSong.audio.currentTime = e.target.value
-            alert("Start: " + this.currentSong.audio.seekable.start(0) + " End: " + this.currentSong.audio.seekable.end(0));
 
         }
 
         this.currentSong.audio.onended = () => {
-            this.loadCurrentSong(this.currentSong.index)
+            if (this.isRepeat) {
+                this.loadCurrentSong(this.currentSong.index);
+                return;
+
+            }
+
+            if (this.isRandom) {
+                this.random();
+                return;
+            }
+
+            this.loadCurrentSong(this.currentSong.index + 1)
         }
 
     }
-
-    get(a) {
-        console.log(a);
-    }
-  
-
-
-
-
 
 }
 

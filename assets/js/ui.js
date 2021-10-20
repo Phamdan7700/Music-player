@@ -11,6 +11,7 @@ class UI {
         this.playList = document.getElementsByClassName('song');
         this.thumbnail = document.querySelector('#thumbnail img')
         this.durationControl = document.getElementById('duration')
+        this.bg = document.querySelector('.bg')
 
 
     }
@@ -41,8 +42,13 @@ class UI {
         this.playList[index].classList.add('active')
         activedSong = document.querySelector('.song.active')
         let headerWidth = document.getElementById('header').offsetHeight;
-        let offsetTop = activedSong.offsetTop
-        window.scrollTo(0, offsetTop - headerWidth - 100)
+        let offsetTop = activedSong.getBoundingClientRect();
+        let scrollHeigh = activedSong.offsetTop;
+
+        if (offsetTop.bottom > document.documentElement.clientHeight || offsetTop.top < headerWidth) {
+            window.scrollTo(0, scrollHeigh - headerWidth - 10)
+        }
+
         document.querySelector('.song.active').scrollTo()
         this.thumbnail.classList.add('rotate');
         this.title.innerText = playListData[index].title

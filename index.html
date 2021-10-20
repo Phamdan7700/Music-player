@@ -15,31 +15,39 @@
     <div id="app">
         <!-- Title -->
         <div id="header">
-            <div id="now-playing">Đang Phát ...</div>
-            <h3 id="title"></h3>
+            <div class="container">
+                <div class="header">
+                    <div class="bg">
+                        <div id="now-playing">Đang Phát ...</div>
+                        <h3 id="title"></h3>
 
-            <!-- Thumbnail -->
-            <div id="thumbnail">
-                <img src="./assets/img/lebaobinh.jpg" alt="thumbnail">
+                        <!-- Thumbnail -->
+                        <div id="thumbnail">
+                            <img src="./assets/img/musical-notes-frame-with-text-space_1017-32857.jpg" alt="thumbnail">
+                        </div>
+
+                        <!-- Control -->
+                        <ul id="controls">
+                            <li id="btn-repeat" title="Repeat"><i class="fas fa-redo"></i></li>
+                            <li id="btn-backward" title="Previous"><i class="fas fa-step-backward"></i></li>
+                            <li id="btn-play" title="Play and pause"><i class="far fa-play-circle"></i></li>
+                            <li id="btn-forward"  title="Next"><i class="fas fa-step-forward"></i></li>
+                            <li id="btn-random" title="Random"><i class="fas fa-random"></i></li>
+                            <input type="range" name="duration" id="duration" min="0" value="0">
+
+                        </ul>
+                    </div>
+                </div>
             </div>
-
-            <!-- Control -->
-            <ul id="controls">
-                <li id="btn-repeat"><i class="fas fa-redo"></i></li>
-                <li id="btn-backward"><i class="fas fa-step-backward"></i></li>
-                <li id="btn-play"><i class="far fa-play-circle"></i></li>
-                <li id="btn-forward"><i class="fas fa-step-forward"></i></li>
-                <li id="btn-random"><i class="fas fa-random"></i></li>
-                <input type="range" name="duration" id="duration" min="0" value="0">
-
-            </ul>
         </div>
 
 
 
         <!-- Playlist -->
-        <ul id="playlist-wrapper">
-        </ul>
+        <div class="container">
+            <ul id="playlist-wrapper">
+            </ul>
+        </div>
     </div>
 
 

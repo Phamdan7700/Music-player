@@ -4,45 +4,84 @@
   box-sizing: inherit;
 }
 html {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
-
 
 :root {
   --app-width: 500px;
   --header-height: 400px;
-  
+  --colorStart: #dac981c5;
+  --colorStop: #4c4c4dd2;
+}
+
+.container {
+  max-width: var(--app-width);
+  margin: 0 auto;
 }
 
 #app {
-  max-width: var(--app-width);
   overflow: auto;
   margin: auto;
   text-align: center;
   position: relative;
-  /* background: linear-gradient(#3a445a85, #182238); */
 }
 
 #header {
-  width: var(--app-width);
-  height: var(--header-height);
-  padding: 10px 0;
+  width: 100%;
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #182238;
+  left: 0;
   z-index: 10;
 }
 
+.header {
+  background: radial-gradient(var(--colorStart), var(--colorStop)),
+  url("/assets/img/musical-notes-frame-with-text-space_1017-32857.jpg")
+    no-repeat center / cover;
+  height: var(--header-height);
+  border-radius: 0 0 30px 30px;
+}
+
+.bg {
+  background: radial-gradient(var(--colorStart), var(--colorStop)),
+    url("/assets/img/musical-notes-frame-with-text-space_1017-32857.jpg")
+      no-repeat center / cover;
+  height: 100%;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: inherit;
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
 #header #now-playing {
-  color: red;
+  color: #fff;
   font-weight: bold;
 }
 
 #header #title {
   font-weight: bold;
+  color: #fff;
+  margin: 5px 0;
 }
 
 #thumbnail {
@@ -50,8 +89,11 @@ html {
 }
 
 #thumbnail img {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   width: 200px;
+  height: 200px;
+  object-fit: cover;
+  clip-path: circle();
 }
 
 .rotate {
@@ -88,11 +130,10 @@ html {
 }
 
 #playlist-wrapper {
-  padding: 10px 0;
-  margin-top: 10px;
-  background: linear-gradient(#3a445a85, #182238);
+  padding: 50px 0 10px;
+  background: linear-gradient(#f81d92, #6f0cc8);
   cursor: pointer;
-  margin-top: var(--header-height);
+  margin-top: calc(var(--header-height) - 50px);
 }
 
 #playlist-wrapper .song {
@@ -100,8 +141,12 @@ html {
   padding: 10px;
   margin: 10px;
   border-radius: 10px;
-  background-color: #fff;
-  box-shadow: 0 1px 2px #333;
+  /* background-color: #fff; */
+  /* box-shadow: 0 1px 2px #333; */
+}
+
+#playlist-wrapper .song:hover {
+  background-color: rgba(51, 51, 51, 0.2);
 }
 
 #playlist-wrapper .song img {
@@ -114,8 +159,77 @@ html {
   text-align: left;
   padding: 0 10px;
 }
+.song-info h3 {
+  color: rgb(238, 227, 204);
+}
+
+.song-info span {
+  color: rgba(255, 255, 255, 0.5);
+}
 
 .song.active {
-  border: 1px solid red;
-  background-color: orange !important;
+  /* border: 1px solid rgb(143, 143, 143); */
+  background-color: rgba(51, 51, 51, 0.5);
+}
+
+/* .fa-play-circle,
+.fa-pause-circle {
+  color: #f81d92;
+} */
+
+li[id^='btn-'] {
+  color: #fff;
+}
+
+li[id^='btn-']:hover {
+  color: #333;
+}
+/* Progress bar */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  /* background: #d3d3d3; */
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+/* Mouse-over effects */
+input[type="range"]:hover {
+  opacity: 1;
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #f81d92;
+  border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #f81d92;
+  border: none;
+  border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-progress {
+  height: 50%;
+  background-color: #f81d92;
+  border: 2px solid #f81d92;
+}
+
+input[type="range"]::-webkit-range-progress {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background-color: #f81d92;
+  height: 100%;
 }
