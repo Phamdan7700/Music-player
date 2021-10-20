@@ -13,8 +13,8 @@ html {
 :root {
   --app-width: 500px;
   --header-height: 400px;
-  --colorStart: #4c4c4dd2;
-  --colorStop: #4c4c4dd2;
+  --colorStart: rgba(0, 0, 0, 0.5);
+  --colorStop: rgba(0, 0, 0, 0.5);
 }
 
 .container {
