@@ -8,13 +8,13 @@
 html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  -webkit-tap-highlight-color: transparent;
+  /* -webkit-tap-highlight-color: transparent;` */
 }
 
 :root {
   --app-width: 500px;
   --header-height: 400px;
-  --colorStart: #dac981c5;
+  --colorStart: #4c4c4dd2;
   --colorStop: #4c4c4dd2;
 }
 
