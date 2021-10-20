@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-  user-select: none;
+  user-select: none !important;
 }
 html {
   box-sizing: border-box;
@@ -38,7 +38,7 @@ html {
 
 .header {
   background: radial-gradient(var(--colorStart), var(--colorStop)),
-  url("../img/musical-notes-frame-with-text-space_1017-32857.jpg")
+  url("./../img/musical-notes-frame-with-text-space_1017-32857.jpg")
     no-repeat center / cover;
   height: var(--header-height);
   border-radius: 0 0 30px 30px;
@@ -46,7 +46,7 @@ html {
 
 .bg {
   background: radial-gradient(var(--colorStart), var(--colorStop)),
-    url("../img/musical-notes-frame-with-text-space_1017-32857.jpg")
+    url("./../img/musical-notes-frame-with-text-space_1017-32857.jpg")
       no-repeat center / cover;
   height: 100%;
   width: 100%;
