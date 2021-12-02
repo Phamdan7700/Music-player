@@ -133,7 +133,7 @@ html {
 
 #playlist-wrapper {
   padding: 50px 0 10px;
-  background: linear-gradient(#f81d92, #6f0cc8);
+  background: linear-gradient(rgb(243, 130, 25), #f33f3f);
   cursor: pointer;
   margin-top: calc(var(--header-height) - 50px);
 }
@@ -185,7 +185,7 @@ li[id^='btn-'] {
   color: #fff;
 }
 
-li[id^='btn-']:hover {
+li[id^='btn-']:hover, i[id^='btn-']:active {
   color: #333;
 }
 /* Progress bar */

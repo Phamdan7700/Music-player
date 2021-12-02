@@ -1,31 +1,31 @@
 const playListData = [
     {
         id: 1,
-        title: "Người Lạ Thoáng Qua",
-        artist: "Đinh Tùng Huy, ACV",
+        title: "Ái Nộ - VinnieDePooh TikTok Remix",
+        artist: "Masew x Khoi Vu",
         thumbnail: 'Dinhtunghuy.jpg',
-        audio: 'CauHenCauThe-DinhDung-6994741.mp3'
+        audio: 'Ái Nộ - VinnieDePooh TikTok Remix - Bản Gốc - Masew x Khoi Vu.mp3'
     },
     {
         id: 2,
-        title: "Câu Hẹn Câu Thề",
-        artist: "Đình Dũng, ACV",
+        title: "Câu Hứa Chưa Vẹn Tròn Remix",
+        artist: "Phát Huy T4 x Dj Đại Mèo",
         thumbnail: '1617029681297_500.jpg',
-        audio: 'CauHenCauThe-DinhDung-6994741.mp3'
+        audio: 'Câu Hứa Chưa Vẹn Tròn Remix - ( Phát Huy T4 x Dj Đại Mèo ) Mình Đã Hứa Yêu Thật Lâu Remix Tik Tok.mp3'
     },
     {
         id: 3,
-        title: "Em Là Con Thuyền Cô Đơn",
-        artist: "Thái Học",
+        title: "Đâu Còn Đây (Orinn Remix)",
+        artist: "Nal x Lee Ken",
         thumbnail: '1633164445997_640.jpg',
-        audio: 'EmLaConThuyenCoDonACVRemix-ThaiHoc-7098730.mp3'
+        audio: 'Đâu Còn Đây (Orinn Remix) - Nal x Lee Ken - Nhạc Trẻ Edm Hot Tik Tok Gây Nghiện Hay Nhất 2021.mp3'
     },
     {
         id: 4,
-        title: "Sai Cách Yêu",
-        artist: "Lê Bảo Bình",
+        title: "Nói Với Em Một Lời Trước Khi Xa Rời",
+        artist: "Không Bằng (RIN Music Remix)",
         thumbnail: 'lebaobinh.jpg',
-        audio: 'SaiCachYeuRemixVersion2-LeBaoBinh-7064489.mp3'
+        audio: 'Nói Với Em Một Lời Trước Khi Xa Rời - Không Bằng (RIN Music Remix) - Na.mp3'
     },
     {
         id: 5,
@@ -36,10 +36,10 @@ const playListData = [
     },
     {
         id: 6,
-        title: "Ngày Tỏ Tình Bạn",
-        artist: "Suni Hạ Linh, Osad",
+        title: "Yêu Đừng Sợ Đau",
+        artist: "Ngô Lan Hương",
         thumbnail: '1634284020524_500.jpg',
-        audio: 'NgayToTinhBan-SuniHaLinhOsad-7013721.mp3'
+        audio: 'Yêu Đừng Sợ Đau - Ngô Lan Hương「Cukak Remix」- Audio Lyrics Video.mp3'
     },
     {
         id: 7,
@@ -68,6 +68,13 @@ const playListData = [
         artist: "Phan Mạnh Quỳnh",
         thumbnail: '1628404241673_500.jpg',
         audio: 'GapGoYeuDuongVaDuocBenEm-PhanManhQuynh-7061898.mp3'
+    },
+    {
+        id: 11,
+        title: "Thay Lòng REMIX",
+        artist: "Nal x TVK ( Đại Mèo Remix )",
+        thumbnail: '1628404241673_500.jpg',
+        audio: 'Thay Lòng REMIX - Nal x TVK ( Đại Mèo Remix ) - TẠM BIỆT NHÉ NGƯỜI ANH YÊU ANH CHÚC EM VUI BÊN NGƯỜI.mp3'
     },
 ]
 
