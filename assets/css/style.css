@@ -8,6 +8,9 @@ html {
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   -webkit-tap-highlight-color: transparent;
+  background: url('../img/1.jpg')
+    no-repeat center center / cover;
+  background-attachment: fixed;
 }
 
 :root {
@@ -20,6 +23,7 @@ html {
 .container {
   max-width: var(--app-width);
   margin: 0 auto;
+  
 }
 
 #app {
@@ -27,6 +31,7 @@ html {
   margin: auto;
   text-align: center;
   position: relative;
+  
 }
 
 #header {
@@ -37,22 +42,21 @@ html {
   z-index: 10;
 }
 
-.header {
+/* .header {
   background: radial-gradient(var(--colorStart), var(--colorStop)),
   url("./../img/musical-notes-frame-with-text-space_1017-32857.jpg")
     no-repeat center / cover;
-  height: var(--header-height);
   border-radius: 0 0 30px 30px;
-}
+  padding: 10px;
+
+} */
 
 .bg {
-  background: radial-gradient(var(--colorStart), var(--colorStop)),
-    url("./../img/musical-notes-frame-with-text-space_1017-32857.jpg")
-      no-repeat center / cover;
+  background-color: rgba(0, 0, 0, 0.6);
   height: 100%;
   width: 100%;
-  padding: 10px 0;
-  border-radius: inherit;
+  border-radius: 0 0 30px 30px;
+  padding: 10px;
 }
 
 .fadeIn {
@@ -133,9 +137,9 @@ html {
 
 #playlist-wrapper {
   padding: 50px 0 10px;
-  background: linear-gradient(rgb(243, 130, 25), #f33f3f);
   cursor: pointer;
   margin-top: calc(var(--header-height) - 50px);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 #playlist-wrapper .song {
@@ -148,7 +152,7 @@ html {
 }
 
 #playlist-wrapper .song:hover {
-  background-color: rgba(51, 51, 51, 0.2);
+  background-color: rgba(182, 182, 182, 0.3);
 }
 
 #playlist-wrapper .song img {
@@ -172,8 +176,8 @@ html {
 }
 
 .song.active {
-  /* border: 1px solid rgb(143, 143, 143); */
-  background-color: rgba(51, 51, 51, 0.5);
+  border: 1px solid rgb(143, 143, 143);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 /* .fa-play-circle,
@@ -181,11 +185,12 @@ html {
   color: #f81d92;
 } */
 
-li[id^='btn-'] {
+li[id^="btn-"] {
   color: #fff;
 }
 
-li[id^='btn-']:hover, i[id^='btn-']:active {
+li[id^="btn-"]:hover,
+i[id^="btn-"]:active {
   color: #333;
 }
 /* Progress bar */

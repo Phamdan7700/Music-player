@@ -1,4 +1,13 @@
-
+const bg = [
+'1.jpg',
+'2.jpg',
+'3.jpg',
+'4.jpg',
+'5.jpg',
+'6.jpg',
+'7.jpg',
+'8.jpg',
+]
 
 class UI {
     constructor() {
@@ -12,8 +21,6 @@ class UI {
         this.thumbnail = document.querySelector('#thumbnail img')
         this.durationControl = document.getElementById('duration')
         this.bg = document.querySelector('.bg')
-
-
     }
 
 
@@ -52,6 +59,11 @@ class UI {
         document.querySelector('.song.active').scrollTo()
         this.thumbnail.classList.add('rotate');
         this.title.innerText = playListData[index].title
+    }
+
+    randomBg() {
+        const randomIndex = Math.floor(Math.random() *bg.length)
+        document.documentElement.style.backgroundImage = `url(assets/img/${bg[randomIndex]})`
     }
 
 
