@@ -141,6 +141,8 @@ class MusicPlayer {
             this.ui.playBtn.innerHTML = '<i class="far fa-pause-circle"></i>'
             this.ui.thumbnail.style.animationPlayState = 'running';
 
+        }else {
+            this.random();
         }
 
     }
